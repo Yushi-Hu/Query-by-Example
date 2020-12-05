@@ -1,1 +1,1 @@
-# Query-by-Example
+# Embedding-based query=-by-example search
