@@ -37,7 +37,7 @@ Run query-by-example search with ASE (concat) on QUESST 2015 dev set. Results wi
 ```
 cd code
 
-# Fast run. About 1s per query. Requires 32GB RAM.
+# Fast run. About 1s per query. Requires 32GB RAM. maxTWV 0.171  minCnxe 0.779
 python qbe_main_2015.py --dir ../expts/span-concat/ --mode concat --inc 20
 
 # Result in paper. About 5s per query. Requires 64GB RAM. maxTWV 0.193  minCnxe 0.753
@@ -45,4 +45,4 @@ python qbe_main_2015.py --dir ../expts/span-concat/ --mode concat --inc 5
 ```
 To get the best result in paper, fusion the score output from the ASE-mean and ASE-concat systems.
 
-Best result on dev: maxTWV 0.323  minCnxe 0.670
+Best result on dev: maxTWV 0.323 ,  minCnxe 0.670
