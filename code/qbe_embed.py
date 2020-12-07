@@ -14,16 +14,9 @@ def load_net(config, ckpt_dir, feat_dim, use_gpu=True, span_net=True):
     if span_net:
         acoustic_net = net.AcousticSpanRNN(config, feat_dim, use_gpu=use_gpu)
 
-        # sketchy fix for filename
-        net_view1_src = os.path.join(ckpt_dir, 'net-view1.ft.pth')
-        net_view1_dst = os.path.join(ckpt_dir, 'segnet-view1.best.pth')
-        net_view2_src = os.path.join(ckpt_dir, 'net-view2.ft.pth')
-        net_view2_dst = os.path.join(ckpt_dir, 'segnet-view2.best.pth')
-        shutil.copyfile(net_view1_src, net_view1_dst)
-        shutil.copyfile(net_view2_src, net_view2_dst)
-
         acoustic_net.set_savepath(ckpt_dir, 'segnet')
         acoustic_net.load(tag='best')
+
         acoustic_net.eval()
 
         return acoustic_net

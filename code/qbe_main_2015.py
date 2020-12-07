@@ -14,19 +14,19 @@ if __name__ == "__main__":
     log.basicConfig(level=log.INFO, format="%(asctime)s: %(message)s")
     parser = argparse.ArgumentParser()
     parser.add_argument("--dir", help="working directory")
-    parser.add_argument("--mode", default='concat', help="mean or concat")
-    parser.add_argument("--inc", type=int, default=5, help="frame resolution")
+    parser.add_argument("--mode", default='mean', help="mean or concat")
+    parser.add_argument("--inc", type=int, default=20, help="frame resolution")
     parser.add_argument("--emb_level", choices=['span', 'word'], default='span', help="ASE or AWE")
     args = parser.parse_args()
 
-    search_fn = f"/home/yushihu/Datasets/quesst2015/fbank_pitch_feats_with_cmvn.search.hdf5"
-    query_fn = f"/home/yushihu/Datasets/quesst2015/fbank_pitch_feats_with_cmvn.dev-queries.hdf5"
+    search_fn = f"../quesst2015/fbank_pitch_feats_with_cmvn.search.hdf5"
+    query_fn = f"../quesst2015/fbank_pitch_feats_with_cmvn.dev-queries.hdf5"
 
-    align_search_fn = f"/home/yushihu/Datasets/quesst2015/align.search.hdf5"
-    align_query_fn = f"/home/yushihu/Datasets/quesst2015/align.dev-queries.hdf5"
+    align_search_fn = f"../quesst2015/align.search.hdf5"
+    align_query_fn = f"../quesst2015/align.dev-queries.hdf5"
 
-    test_query_fn = f"/home/yushihu/Datasets/quesst2015/fbank_pitch_feats_with_cmvn.eval-queries.hdf5"
-    test_align_query_fn = f"/home/yushihu/Datasets/quesst2015/align.eval-queries.hdf5"
+    test_query_fn = f"../quesst2015/fbank_pitch_feats_with_cmvn.eval-queries.hdf5"
+    test_align_query_fn = f"../quesst2015/align.eval-queries.hdf5"
 
     working_dir = args.dir
     mode = args.mode
